@@ -34,7 +34,9 @@ public static class D1
                 return null;
             return input[index..(index + 3)].Sum();
         }).Where(i => i is not null)
+#pragma warning disable CS8629 // Nullable value type may be null.
         .Select(i => i.Value)
+#pragma warning restore CS8629 // Nullable value type may be null.
         .ToArray();
 
         return GetLargerSum(threeMeasurements);
