@@ -8,3 +8,6 @@ Console.WriteLine(D2.SolveB());
 
 Console.WriteLine(D3.SolveA());
 Console.WriteLine(D3.SolveB());
+
+Console.WriteLine(D4.SolveA());
+Console.WriteLine(D4.SolveB());
