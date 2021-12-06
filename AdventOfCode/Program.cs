@@ -14,3 +14,6 @@ Console.WriteLine(D4.SolveB());
 
 Console.WriteLine(D5.SolveA());
 Console.WriteLine(D5.SolveB());
+
+Console.WriteLine(D6.SolveA());
+Console.WriteLine(D6.SolveB());
