@@ -23,3 +23,6 @@ Console.WriteLine(D7.SolveB());
 
 Console.WriteLine(D8.SolveA());
 Console.WriteLine(D8.SolveB());
+
+Console.WriteLine(D9.SolveA());
+Console.WriteLine(D9.SolveB());
