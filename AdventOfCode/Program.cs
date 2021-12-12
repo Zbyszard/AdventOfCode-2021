@@ -1,10 +1,18 @@
-﻿foreach (int i in Enumerable.Range(1, 25))
-{
-    string className = "AdventOfCode.D" + i;
-    var type = Type.GetType(className);
-    if (type is null)
-        break;
+﻿using System.Diagnostics;
 
-    Console.WriteLine(type?.GetMethod("SolveA")!.Invoke(null, null));
-    Console.WriteLine(type?.GetMethod("SolveB")!.Invoke(null, null));
+IEnumerable<Type> types = Enumerable.Range(1, 25)
+    .Select(i => Type.GetType("AdventOfCode.D" + i))
+    .Where(t => t is not null)
+    .Select(t => t!);
+
+if (Debugger.IsAttached)
+    InvokeSolutions(types.Last());
+else
+    foreach (var type in types)
+        InvokeSolutions(type);
+
+static void InvokeSolutions(Type type)
+{
+    Console.WriteLine(type.GetMethod("SolveA")!.Invoke(null, null));
+    Console.WriteLine(type.GetMethod("SolveB")!.Invoke(null, null));
 }
